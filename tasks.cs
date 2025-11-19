@@ -14,7 +14,7 @@ public static class Tasks
 
         List<int> result = new List<int>();
         int i = 0;
-
+         
         while (i < list.Count)
         {
             result.Add(list[i]);
@@ -105,7 +105,7 @@ public static class Tasks
         char[] deafConsonants = { 'п', 'ф', 'к', 'т', 'ш', 'с', 'х', 'ц', 'ч', 'щ' };
 
         string[] words = text.Split(new[] { ' ', ',', '.', '!', '?', ';', ':', '\n', '\r', '\t' },
-                                  StringSplitOptions.RemoveEmptyEntries);
+        StringSplitOptions.RemoveEmptyEntries);
 
         Dictionary<char, int> consonantCount = new Dictionary<char, int>();
         foreach (char consonant in deafConsonants)
@@ -123,9 +123,9 @@ public static class Tasks
         }
 
         var result = consonantCount.Where(pair => pair.Value == 1)
-                                  .Select(pair => pair.Key)
-                                  .OrderBy(c => c)
-                                  .ToList();
+        .Select(pair => pair.Key)
+        .OrderBy(c => c)
+        .ToList();
 
         Console.WriteLine("Глухие согласные в одном слове:");
         foreach (char consonant in result)
